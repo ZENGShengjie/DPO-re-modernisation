@@ -1,0 +1,18 @@
+# DPO 实战仓库依赖
+# Python 3.10 验证通过; Python 3.9 / 3.11 应当也能跑
+#
+# 注意: torch 需要根据 CUDA 情况二选一
+#   CPU: pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   GPU: pip install torch
+
+torch>=2.0
+transformers>=4.40.0
+datasets>=2.18.0
+peft>=0.10.0
+trl>=0.9.0
+accelerate>=0.27.0
+pyyaml>=6.0
+
+# 评测 (可选)
+# evaluate>=0.4.0
+# lm-eval>=0.4.0

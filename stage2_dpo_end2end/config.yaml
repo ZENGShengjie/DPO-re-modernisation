@@ -1,0 +1,33 @@
+data:
+  dataset_name: HuggingFaceH4/ultrafeedback_binarized
+  eval_ratio: 0.1
+  max_length: 512
+  max_samples: 500
+  seed: 42
+dpo:
+  alpha: 0.1
+  beta: 0.1
+  label_smoothing: 0.0
+  loss_type: dpo
+model:
+  force_cpu: true
+  lora_alpha: 32
+  lora_dropout: 0.05
+  lora_r: 16
+  name: Qwen/Qwen2.5-0.5B-Instruct
+  use_lora: true
+training:
+  bf16: false
+  eval_steps: 100
+  fp16: false
+  gradient_accumulation_steps: 4
+  learning_rate: 5.0e-05
+  logging_steps: 10
+  lr_scheduler_type: cosine
+  num_train_epochs: 1
+  output_dir: ../outputs/dpo_qwen05b
+  per_device_eval_batch_size: 2
+  per_device_train_batch_size: 2
+  report_to: none
+  save_steps: 200
+  warmup_ratio: 0.1

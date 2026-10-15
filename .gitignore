@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# 模型权重 (本地 HF 缓存, 体积大, 走 .gitattributes 用 LFS 也可, 这里直接忽略)
+models/
+*.safetensors
+*.bin
+*.gguf
+*.pt
+*.pth
+
+# 训练输出 (checkpoint / 评估 json / 曲线图, 由各阶段脚本自己生成)
+# checkpoint 目录 (体积大, 必排)
+outputs/checkpoint-*/
+outputs/*/checkpoint-*/
+outputs/dry_dpop/
+outputs/dryrun*/
+outputs/_smoke*/
+outputs/_dryrun*/
+outputs/smoke_test/
+outputs/dpo_qwen05b_500_v2/
+
+# 变体训练产物 (每个含完整 model + optimizer, 单目录 1-2GB)
+outputs/variant_*/
+
+# 数据集
+data/raw/
+data/**/*.arrow
+data/**/*.parquet
+data/**/dataset_info.json
+data/**/cache-*
+
+# 训练日志和临时文件
+*.log
+*.out
+*.err
+*.tmp
+check_loss_types.ps1
+
+# 讲稿 (本地资料, 不到 repo)
+讲稿_*.md
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.cursor/
